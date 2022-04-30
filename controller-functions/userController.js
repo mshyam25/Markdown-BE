@@ -132,7 +132,9 @@ const verifyResetLink = expressAsyncHandler(async (request, response) => {
     const updatedToken = await PasswordResetToken.deleteOne({
       passwordResetToken: passwordResetToken,
     })
-    response.redirect(`http://localhost:3000/resetpassword/${user.email}`)
+    response.redirect(
+      `https://markdown-react-appl.netlify.app/resetpassword/${user.email}`
+    )
   } else {
     response.status(404)
 
